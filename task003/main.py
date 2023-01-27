@@ -23,11 +23,10 @@ for i in range(number_classes1):
     
 def DesksCalculation(classes_pupils = []):
     sum = 0
-    i = 0
-    for i in range(classes_pupils.count):
+    for i in range(len(classes_pupils)):
         sum += classes_pupils[i]
-    desks = (sum + 2 - 1)/2
+    desks = (sum + 2 - 1)//2
     return desks
 
 desks1 = DesksCalculation(classes_pupils1)
-print(f"Потребуется приобрести {desks1} парт")
+print(f"Потребуется приобрести парт: {desks1}")
