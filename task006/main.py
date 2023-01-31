@@ -7,15 +7,15 @@
 # 385916 -> yes
 # 123456 -> no
 
-# проверяет вводимое число на шестизначность
-while True:
-    number_ticket = int(input("Введите шестизначный номер билета: "))
-    if 99999 < number_ticket < 1000000:
-        break
-    else:
-        print("Введены неверные данные")
+number_ticket = input("Введите шестизначный номер билета: ")
+while len(number_ticket) < 6:
+    print("Введены неверные данные")
+    number_ticket = input("Введите шестизначный номер билета: ")
 
+number_ticket = int(number_ticket)
 # создаёт список из цифр числа
+
+
 def digitsList(number: int):
     digits = []
     while number > 0:
@@ -25,6 +25,8 @@ def digitsList(number: int):
     return digits
 
 # проверяет равна ли сумма элементов одной половины списка другой половине списка
+
+
 def equalitySumHalvesElementsList(numbers=[]):
     size = len(numbers)
     if size % 2 == 0:
