@@ -8,13 +8,6 @@
 
 from random import randint
 
-n = int(input('Введите количество монет: '))
-
-coins_side1 = []
-for i in range(n):
-    coins_side1.append(randint(0, 1))
-print(f'Стороны монет, 0 - решка, 1 - герб:\n{coins_side1}')
-
 
 def coins_sides(coins_side=[]):
     tails = 0
@@ -36,5 +29,12 @@ def coins_conditions_all_one_side(coins_side=[]):
     else:
         print(f'Нужно перевернуть c гербов: {eagles}')
 
+
+n = int(input('Введите количество монет: '))
+
+coins_side1 = []
+for i in range(n):
+    coins_side1.append(randint(0, 1))
+print(f'Стороны монет, 0 - решка, 1 - герб:\n{coins_side1}')
 
 coins_conditions_all_one_side(coins_side1)
