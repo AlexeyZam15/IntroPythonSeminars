@@ -17,4 +17,5 @@ def list_fibonacci(count: int):
     l1.reverse()
     return l1 + l
 
+
 print(list_fibonacci(k))
