@@ -8,7 +8,7 @@
 
 from random import randint
 
-list1 = [randint(-1, 4) for i in range(int(input('Введите размер списка: ')))]
+list1 = [randint(-1, 5) for i in range(int(input('Введите размер списка: ')))]
 print(list1)
 
 # count = 0
