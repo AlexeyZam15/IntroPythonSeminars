@@ -15,10 +15,12 @@ n = int(input('Введите размер списка:'))
 list1 = [randint(1,n) for i in range(n)]
 print(list1)
 x = int(input('Введите число:'))
-
+found = False
 mod = 0
-for i in list1:
-    if i == x - mod or i == x + mod:
-        print(i)
-        break
-    mod+=1
+while found == False:
+    for i in list1:
+        if i == x - mod or i == x + mod:
+            print(i)
+            found = True
+            break
+    mod +=1
