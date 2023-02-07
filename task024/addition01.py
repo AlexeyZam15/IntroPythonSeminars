@@ -9,7 +9,7 @@ set1 = set(d).union({'0','1','.'})
 while len(set1)>3:
     print('Введены неверные данные.')
     d = input('Введите точность: ')
-    set1 = set(d)
+    set1 = set(d).union({'0','1','.'})
 
 d = d.replace('.','')
 
