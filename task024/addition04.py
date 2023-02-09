@@ -9,33 +9,37 @@ while k < 1:
     print('Введеные неверные данные')
     k = int(input('Введите натуральную степень k: '))
 
-degrees = []
-for i in range(1, k+1):
-    degrees.append(i)
+def create_random_polynom(x_max_degree):
 
-coeffs = []
-for i in range(k):
-    coeffs.append(randint(0, 10))
+    degrees = []
+    for i in range(1, x_max_degree+1):
+        degrees.append(i)
 
-# expression = 0
-expression_string = ''
-c = randint(0, 10)
+    coeffs = []
+    for i in range(x_max_degree):
+        coeffs.append(randint(0, 10))
 
-for i in range(k):
-    if coeffs[i] > 0:
-        expression_string += f'{coeffs[i]}*x^{degrees[i]} + '
-    # expression += coeffs[i]*x**degrees[i]
+    # expression = 0
+    expression_string = ''
+    c = randint(0, 10)
 
-if expression_string != '':
-    if c != 0:
-        expression_string += f'{c}'
+    for i in range(x_max_degree):
+        if coeffs[i] > 0:
+            expression_string += f'{coeffs[i]}*x^{degrees[i]} + '
+        # expression += coeffs[i]*x**degrees[i]
+
+    if expression_string != '':
+        if c != 0:
+            expression_string += f'{c}'
+        else:
+            expression_string = expression_string[:-3]
+        expression_string += ' = 0'
+        print(expression_string)
     else:
-        expression_string = expression_string[:-3]
-    expression_string += ' = 0'
-    print(expression_string)
-else:
-    print('Все коэффиценты многочлена равны 0')
-# expression += c
-
+        print('Все коэффиценты многочлена равны 0')
+    # expression += c
+    return expression_string
+ 
+expression_string1 = create_random_polynom(k)
 with open('file.txt', 'w') as data:
-     data.write(expression_string)
+    data.write(expression_string1)
