@@ -3,15 +3,13 @@
 
 from create_random_polynom import create_random_polynom
 
-exp1 = create_random_polynom(2)
-while 'x^1' in exp1:
-    exp1 = create_random_polynom(2)
+max_degree = int(input('Введите максимальную степень x: '))
 
 with open('file1.txt', 'w') as data:
-    data.write(exp1)
+    data.write(create_random_polynom(max_degree))
     
 with open('file2.txt', 'w') as data:
-    data.write(create_random_polynom(2))
+    data.write(create_random_polynom(max_degree))
     
 with open('file1.txt', 'r') as data:
     for line in data:
