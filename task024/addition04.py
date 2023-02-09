@@ -10,7 +10,6 @@ while k < 1:
     k = int(input('Введите натуральную степень k: '))
 
 def create_random_polynom(x_max_degree):
-
     degrees = []
     for i in range(1, x_max_degree+1):
         degrees.append(i)
@@ -34,9 +33,9 @@ def create_random_polynom(x_max_degree):
         else:
             expression_string = expression_string[:-3]
         expression_string += ' = 0'
-        print(expression_string)
+        # print(expression_string)
     else:
-        print('Все коэффиценты многочлена равны 0')
+        expression_string = 'Все коэффиценты многочлена равны 0'
     # expression += c
     return expression_string
  
