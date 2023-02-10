@@ -20,18 +20,10 @@ n,m = [int(x) for x in input().split()[:2]]
 
 print(f'Введите чисел через пробел: {n}')
 list_1 = [int(x) for x in input().split()[:n]]
-# while len(list_1) != n:
-#     print(f'Введено неверное кол-во элементов: {len(list_1)}')
-#     print(f'Введите чисел через пробел: {n}')
-#     list_1 = [int(x) for x in input().split()]
 set_1 = set(list_1)
 
 print(f'Введите чисел через пробел: {m}')
 list_2 = [int(x) for x in input().split()[:m]]
-# while len(list_2) != m:
-#     print(f'Введено неверное кол-во элементов: {len(list_2)}')
-#     print(f'Введите чисел через пробел: {m}')
-#     list_2 = [int(x) for x in input().split()]
 set_2 = set(list_2)
 print('Встречающиеся числа в обоих множествах')
 print(*sorted(set_1.intersection(set_2)))
