@@ -17,7 +17,7 @@ from random import randint
 
 
 def sum_closest_list_elements(list1: list, element_index: int, number_closest_elements: int):
-    sum_closet_elements = 0
+    sum_closest_elements = 0
     size_list1 = len(list1)
     element_index = element_index-number_closest_elements//2
     number_iterations = number_closest_elements+1
@@ -25,11 +25,11 @@ def sum_closest_list_elements(list1: list, element_index: int, number_closest_el
         number_iterations-=1
     for i in range(number_iterations):
         # print(element_index, list1[element_index])
-        sum_closet_elements += list1[element_index]
+        sum_closest_elements += list1[element_index]
         element_index += 1
         if element_index > size_list1 - 1:
             element_index = 0
-    return sum_closet_elements
+    return sum_closest_elements
 
 number_bushes = int(input('Введите кол-во кустов: '))
 bushes_berries = [randint(1, 10) for i in range(number_bushes)]
