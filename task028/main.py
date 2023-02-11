@@ -7,10 +7,10 @@ a1 = int(input('Введите первое число: '))
 b1 = int(input('Введите второе число: '))
 
 
-def sum_numbers(a, b):
-    if b > 0:
-        a = sum_numbers(a+1, b-1)
-    return a
+def sum_numbers(max, min):
+    if min > 0:
+        max = sum_numbers(max+1, min-1)
+    return max
 
 
-print(sum_numbers(a1, b1))
+print('Сумма чисел =', sum_numbers(max(a1, b1), min(a1, b1)))
