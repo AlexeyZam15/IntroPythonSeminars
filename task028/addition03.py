@@ -48,7 +48,7 @@ def win_conditions(field: list, symbol: str):
 def counterattack_player_turns(field: list, symbol):
     max_count = len(field) - 1
     max_count_column = len(field[0]) - 1
-    print(max_count, max_count_column)
+    # print(max_count, max_count_column)
     if (len(field) + len(field[0])) % 2 == 0:
         empty = False
         count = 0
@@ -85,13 +85,13 @@ def counterattack_player_turns(field: list, symbol):
         empty = False
         count = 0
         for i in range(len(field)):
-            print('j', j, 'i', i)
+            # print('j', j, 'i', i)
             if field[i][j] == symbol:
                 count += 1
             elif field[i][j] == ' ':
                 empty_x, empty_y = i, j
                 empty = True
-                print(count, empty)
+                # print(count, empty)
         if count >= max_count and empty:
             # print(empty_x, empty_y)
             return empty_x, empty_y
@@ -164,13 +164,11 @@ while not end_game and turns < rows * columns:
             x, y = random_bot_turn(field1, players_symbols[1])
         else:
             if (turns == 0 or turns == 1) and counterattack_player_turns(field1, players_symbols[0]) is None:
-                print(1)
                 x = len(field1) // 2
                 y = len(field1[x]) // 2
                 if field1[x][y] != ' ':
                     x, y = random_bot_turn(field1, players_symbols[1])
             else:
-                print(2)
                 if counterattack_player_turns(field1, players_symbols[0]) is not None:
                     x, y = counterattack_player_turns(field1, players_symbols[0]) \
                         if counterattack_player_turns(field1, players_symbols[1]) is None \
