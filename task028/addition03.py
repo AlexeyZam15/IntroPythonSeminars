@@ -98,11 +98,11 @@ def counterattack_player_turns(field: list, symbol):
 
 
 def random_bot_turn(field: list, symbol):
-    max_row = len(field)-1
+    max_row = len(field) - 1
     max_column = len(field[0]) - 1
-    x1, y1 = randint(0, max_row ), randint(0, max_column)
+    x1, y1 = randint(0, max_row), randint(0, max_column)
     while field[x1][y1] != ' ':
-        x1, y1 = randint(0, max_row ), randint(0, max_column)
+        x1, y1 = randint(0, max_row), randint(0, max_column)
     return x1, y1
 
 
