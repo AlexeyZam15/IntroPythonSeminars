@@ -9,8 +9,10 @@ a1 = int(input('Введите первый элемент арифметиче�
 d = int(input('Введите разность арифметической прогрессии: '))
 n = int(input('Введите кол-во элементов арифметической прогрессии: '))
 
-arif_numbers = []
-for i in range(1, n+1):
-    arif_numbers.append(a1 + (i - 1) * d)
+# arif_numbers = []
+# for i in range(1, n+1):
+#     arif_numbers.append(a1 + (i - 1) * d)
 
+arif_numbers = [a1 + (i - 1) * d for i in range(1, n+1)]
 print(*arif_numbers)
+
