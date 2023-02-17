@@ -8,14 +8,16 @@
 # характеристику.
 
 def same_by(characteristic, objects):
-    for i in objects:
-        if characteristic(i):
-            return False
-    return True
+    # for i in objects:
+    #     if not characteristic(i):
+    #         return False
+    # return True
+    new_list = list(filter(characteristic, objects))
+    return new_list == objects
 
 
-values = [0, 2, 10, 6]
-if same_by(lambda x: x % 2, values):
+values = [0, 2, 10, 6, 7]
+if same_by(lambda x: x % 2 == 0, values):
     print('same')
 else:
     print('different')
