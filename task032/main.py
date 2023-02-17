@@ -33,6 +33,10 @@ print_list(numbers1)
 min1 = int(input('Введите минимум в диапазоне: '))
 max1 = int(input('Введите максимум в диапазоне: '))
 
-range_numbers_indexes = range_list_indexes(numbers1, min1, max1)
+# range_numbers_indexes = range_list_indexes(numbers1, min1, max1)
+
+range_numbers_indexes = [i for i in range(
+    len(numbers1)) if min1 <= numbers1[i] <= max1]
+
 print('Индексы чисел, входящих в диапазон')
 print(range_numbers_indexes)
