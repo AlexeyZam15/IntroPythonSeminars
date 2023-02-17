@@ -18,7 +18,7 @@ def vowels_amount_equal(text0):
     #     counter = 0
     #     for j in i.split('-'):
     #         counter += len(list(filter(lambda x: x in vowels, j)))
-    #     counter = sum([len(list(filter(lambda x: x in vowels, j))) for j in i.split('-')])
+    # #     counter = sum([len(list(filter(lambda x: x in vowels, j))) for j in i.split('-')])
     #     vowels_amount.append(counter)
     vowels_amount = list(
         map(lambda y: sum([len(list(filter(lambda x: x in vowels, j))) for j in y.split('-')]), text0.split()))
