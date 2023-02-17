@@ -22,9 +22,11 @@ def print_operation_table(operation, num_rows=6, num_columns=6):
     #         text += f'{j * i:4}'
     #     text += '\n'
     # #     text += ''.join([f'{j * i:4}' for j in range(1, num_columns + 1)]) + '\n'
-    text = '\n'.join(
+    mult_table = '\n'.join(
         list(map(lambda x: ''.join([f'{j * x:4}' for j in range(1, num_columns + 1)]), range(1, num_rows + 1))))
-    print(text)
+    print(mult_table)
 
 
-print_operation_table(lambda x, y: x * y)
+rows, columns = [int(x) for x in input('Введите кол-во колонок и столбцов через пробел: ').split()[:2]]
+
+print_operation_table(lambda x, y: x * y, rows, columns)
