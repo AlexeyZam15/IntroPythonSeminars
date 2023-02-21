@@ -16,7 +16,7 @@
 def print_records(file_name: str):
     with open(file_name, 'r', encoding='utf-8') as data:
         for line in data:
-            print(*line.split(';')[:4])
+            print(*line.split(';'))
 
 
 def input_records(file_name: str):
@@ -44,7 +44,7 @@ def find_records(file_name: str):
     with open(file_name, 'r', encoding='utf-8') as data:
         for line in data:
             if condition == line.split(';')[:4][int(characteristic)]:
-                print(*line.split(';')[:4])
+                print(*line.split(';'))
                 printed = True
     if not printed:
         print("Не найдено")
