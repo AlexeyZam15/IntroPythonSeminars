@@ -26,7 +26,7 @@ def input_records(file_name: str):
             if line != '':
                 record_id = line.split(';')[:4][0]
         print('Введите фамилию, имя, отчество, номер телефона через пробел')
-        line = f'{int(record_id) + 1};' + ';'.join(input().split()[:4]) + '\n'
+        line = f'{int(record_id) + 1};' + ';'.join(input().split()[:4]) + ';\n'
         data.write(line)
 
 
@@ -39,11 +39,11 @@ def find_records(file_name: str):
         print('По какой характеристике искать?')
         print('1 - фамилия, 2 - имя, 3 - отчество, 4 - номер')
         characteristic = input()
-    condition = input("Введите поисковое значение\n")
+    condition = input('Введите поисковое значение\n')
     printed = False
     with open(file_name, 'r', encoding='utf-8') as data:
         for line in data:
-            if condition == line.split(';')[:4][int(characteristic)]:
+            if condition == line.split(';')[int(characteristic)]:
                 print(*line.split(';'))
                 printed = True
     if not printed:
