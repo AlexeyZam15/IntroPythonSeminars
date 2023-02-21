@@ -13,12 +13,12 @@
 
 def vowels_amount_equal(text0):
     vowels = ['а', 'о', 'и', 'е', 'ё', 'э', 'ы', 'у', 'ю', 'я']
-    vowels_amount = []
+    # vowels_amount = []
     # for phrases in text0.split():
     #     counter = 0
     #     for word in phrases.split('-'):
     #         counter += len(list(filter(lambda symbol: symbol in vowels, word)))
-    #     counter = sum([len(list(filter(lambda symbol: symbol in vowels, word))) for word in phrases.split('-')])
+    #     # counter = sum([len(list(filter(lambda symbol: symbol in vowels, word))) for word in phrases.split('-')])
     #     vowels_amount.append(counter)
     vowels_amount = list(map(lambda phrases: sum([len(list(filter(lambda symbol: symbol in vowels, word)))
                                                   for word in phrases.split('-')]), text0.split()))
