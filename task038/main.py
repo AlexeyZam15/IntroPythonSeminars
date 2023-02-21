@@ -14,10 +14,12 @@ def input_records(file_name: str):
         record_id = 0
         for line in data:
             if line != '':
-                record_id = line.split(';')[:4][0]
+                record_id = line.split(';', 1)[0]
         print('Введите фамилию, имя, отчество, номер телефона через пробел')
         line = f'{int(record_id) + 1};' + ';'.join(input().split()[:4]) + ';\n'
-        data.write(line)
+        confirm = confirmation('добавление')
+        if confirm == 'y':
+            data.write(line)
 
 
 def find_characteristic():
@@ -78,7 +80,7 @@ def replace_record_line(file_name: str, record_id, replaced_line: str):
     with open(file_name, 'r', encoding='utf-8') as data:
         for line in data:
             replaced += line
-            if record_id == line.split(';')[0]:
+            if record_id == line.split(';', 1)[0]:
                 replaced = replaced.replace(line, replaced_line)
     with open(file_name, 'w', encoding='utf-8') as data:
         data.write(replaced)
