@@ -13,16 +13,17 @@
 
 def vowels_amount_equal(text0):
     vowels = ['а', 'о', 'и', 'е', 'ё', 'э', 'ы', 'у', 'ю', 'я']
-    # vowels_amount = []
-    # for i in text0.split():
+    vowels_amount = []
+    # for phrases in text0.split():
     #     counter = 0
-    #     for j in i.split('-'):
-    #         counter += len(list(filter(lambda x: x in vowels, j)))
-    # #     counter = sum([len(list(filter(lambda x: x in vowels, j))) for j in i.split('-')])
+    #     for word in phrases.split('-'):
+    #         counter += len(list(filter(lambda symbol: symbol in vowels, word)))
+    #     counter = sum([len(list(filter(lambda symbol: symbol in vowels, word))) for word in phrases.split('-')])
     #     vowels_amount.append(counter)
-    vowels_amount = list(
-        map(lambda y: sum([len(list(filter(lambda x: x in vowels, j))) for j in y.split('-')]), text0.split()))
-    return all([x == vowels_amount[0] for x in vowels_amount])
+    vowels_amount = list(map(lambda phrases: sum([len(list(filter(lambda symbol: symbol in vowels, word)))
+                                                  for word in phrases.split('-')]), text0.split()))
+    # print(vowels_amount)
+    return all(x == vowels_amount[0] for x in vowels_amount)
 
 
 # 'пара-ра-рам рам-пам-папам па-ра-па-дам'
