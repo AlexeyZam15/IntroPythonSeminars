@@ -39,7 +39,7 @@ def print_operation_table(operation, num_rows=6, num_columns=6):
     table = '\n'.join(
         map(lambda i: ''.join([f'{operation(i, j):5}'
                                if j != 1 and i != 1 else f'{i:5}'
-        if j == 1 else f'{j:5}'
+                               if j == 1 else f'{j:5}'
                                for j in range(1, num_columns + 1)]), range(1, num_rows + 1)))
     print(table)
 
