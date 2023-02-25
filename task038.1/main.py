@@ -1,7 +1,7 @@
 # Дополнить телефонный справочник возможностью импорта и экспорта данных в нескольких форматах.
 # Организовать простую структуру проекта.
 
-from main_functions import *
+from functions import *
 
 path = 'phone_book.txt'
 
@@ -27,6 +27,8 @@ functions = {'1': print_records,
 
 action = None
 while action != 'q':
+    create_csv(path)
+    create_html(path)
     print('Какое действие хотите совершить?', *[f'{i} - {actions[i]}' for i in actions])
     action = input()
     while action not in actions:
