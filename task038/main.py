@@ -57,7 +57,7 @@ def check_id_record(file_name: str, text: str):
         if decision != '2':
             print('Введены неверные данные')
         else:
-            find_records(path, *find_characteristic())
+            find_records(file_name, *find_characteristic())
         decision = input(f'Вы знаете id записи которую хотите {text}? 1 - да, 2 - нет, q - выйти\n')
     if decision == '1':
         record_id = input('Введите id, q - выйти\n')
